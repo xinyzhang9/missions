@@ -1,0 +1,41 @@
+<h2>Hello,<%=current_user.first_name%></h2>
+<div class = 'container'>
+	<h4>Sell Product</h4>
+	<form action="/missions" method = "post">
+		<input type="hidden" name = "authenticity_token" value = "<%=form_authenticity_token%>">
+		<div class="form-group">
+			<label for="title">Mission title</label>
+			<input type="text" class="form-control" name = "title" id = "title">
+			
+		</div>
+		<div class="form-group">
+			<label for="interval">Mission alert interval</label>
+			<input type="text" class="form-control" name = "interval_h" id = "interval_h" placeholder = "hour">
+			<br>
+			<input type="text" class="form-control" name = "interval_m" id = "interval_m" placeholder = "min">
+			
+		</div>
+		<div class="form-group">
+			<label for="times">How many times to alert</label>
+			<input type="text" class="form-control" name = "times" id = "title">
+			
+		</div>
+		<div class="form-group">
+			<label for="title">When shall we start</label><br>
+			Date:<input type="date" class="form-control" name = "when_start_date" id = "when_start">
+			Time:<input type="time" class="form-control" name = "when_start_time" id = "when_start">
+			
+		</div>
+		<div class="form-group">
+			<label for="title">How long will it last</label>
+			<input type="text" class="form-control" name = "lasting" id = "lasting">
+		</div>
+		<div class="form-group">
+			<label for="nightmode">Night Mode</label>
+			<input type="radio" name = "night_mode" value = "on">ON
+			<input type="radio" name = "night_mode" value = "off">OFF			
+		</div>
+
+		<input type="submit" value = "Create" class = "btn btn-success">
+	</form>
+</div>
