@@ -1,6 +1,6 @@
 require 'twilio-ruby'
-require 'rubygems'
-require 'sinatra'
+
+# require 'sinatra'
 
 class TwiliosController < ApplicationController
   def self.message(mission,c_num)
@@ -30,10 +30,10 @@ class TwiliosController < ApplicationController
     end
   end
 
-  def sef.receiveSMS
-    get '/twilios/receive' do
-      puts params[:From]
-      puts params[:Body]
-    end
-  end
+  # def sef.receiveSMS
+  #   get '/twilios/receive' do
+  #     puts params[:From]
+  #     puts params[:Body]
+  #   end
+  # end
 end
