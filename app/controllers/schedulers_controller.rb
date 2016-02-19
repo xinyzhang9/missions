@@ -8,15 +8,20 @@ class SchedulersController < ApplicationController
     # mission= MissionsController.get_last_mission
     interval = mission.interval
     times = mission.times
-
+    c = 1
     # for demo purpose, we use second and mintues to replace mmintues and day
     if interval >0
       counter.interval "#{interval}s",:times => times do
-        TwiliosController.message(mission)
+        TwiliosController.message(mission,c)
+        MissionsController.alertCount(mission,c)
+        c +=1
+
       end
     else
       counter.interval "20s",:times => times do
-        TwiliosController.message(mission)
+        TwiliosController.message(mission,c)
+        MissionsController.alertCount(mission,c)
+        c +=1
       end
     end
   end

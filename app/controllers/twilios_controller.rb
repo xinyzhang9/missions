@@ -1,6 +1,10 @@
 require 'twilio-ruby'
+require 'rubygems'
+require 'sinatra'
+
 class TwiliosController < ApplicationController
-  def self.message(mission)
+  def self.message(mission,c_num)
+    num = c_num
     # puts mission.id
     # mission = MissionsController.get_last_mission
     phone = mission.user.phone
@@ -20,9 +24,16 @@ class TwiliosController < ApplicationController
         client.account.messages.create(
           :from => from,
           :to => key,
-          :body => "Hey #{mission.user.first_name}, Please check your mission -- #{content}!"
+          :body => "Alert No.#{num}: #{mission.user.first_name}, Please check your mission -- #{content}!"
         )
         puts "Sent message to #{content}"
-      end
     end
+  end
+
+  def sef.receiveSMS
+    get '/twilios/receive' do
+      puts params[:From]
+      puts params[:Body]
+    end
+  end
 end

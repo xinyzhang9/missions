@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160218194325) do
     t.integer  "lasting"
     t.boolean  "night_mode"
     t.integer  "check_count"
+    t.integer  "alert_count"
     t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"

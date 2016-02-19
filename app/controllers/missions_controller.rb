@@ -15,7 +15,7 @@ class MissionsController < ApplicationController
     @mission = Mission.new(title:params[:title],interval:interval,
       times:params[:times],when_start_date:params[:when_start_date],
       when_start_time:params[:when_start_time],lasting:params[:lasting],
-      night_mode:night_mode,check_count:0,status:"incompleted")
+      night_mode:night_mode,check_count:0,alert_count:0,status:"incompleted")
     if !@mission.valid?
       flash[:errors] = @mission.errors.full_messages
       redirect_to :back
@@ -66,6 +66,11 @@ class MissionsController < ApplicationController
 #     mission = @mission
 #     return mission
 #   end
+  def self.alertCount(mission,c)
+    @mission = mission
+    @mission.alert_count = c
+    @mission.save
+  end
 # helper_method :get_last
   
 end

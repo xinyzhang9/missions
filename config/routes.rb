@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   delete 'sessions' => 'sessions#destroy'
 
+  get 'twilios/receive' => 'twilios#receive'
+
   root 'sessions#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
