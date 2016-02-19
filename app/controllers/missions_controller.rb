@@ -23,6 +23,8 @@ class MissionsController < ApplicationController
     else
       @mission.user = current_user
       @mission.save
+     
+      SchedulersController.new_missison(@mission) 
       redirect_to "/users/#{current_user.id}"
     end
   end
@@ -47,6 +49,14 @@ class MissionsController < ApplicationController
   def show
     @mission = Mission.find(params[:id])
   end
-
-
+#   def get_last
+#     @mission = current_user.mission.last
+#   end
+#   def self.get_last_mission
+#     self.get_last
+#     mission = @mission
+#     return mission
+#   end
+# helper_method :get_last
+  
 end
