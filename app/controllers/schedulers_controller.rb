@@ -19,4 +19,9 @@ class SchedulersController < ApplicationController
       end
     end
   end
+#please test
+  def self.destroy(mission)
+    counter = "scheduler"+mission.id.to_s
+    counter.kill if counter.running?
+  end
 end
