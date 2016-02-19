@@ -53,3 +53,6 @@ end
 gem 'hirb', '~> 0.7.3'
 gem 'validates_timeliness', '~> 4.0'
 gem 'rails-footnotes', '~> 4.0'
+gem 'rufus-scheduler'
+gem 'twilio-ruby', '~> 4.2.1'
+
