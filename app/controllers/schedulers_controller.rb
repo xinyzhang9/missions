@@ -8,6 +8,7 @@ class SchedulersController < ApplicationController
     # mission= MissionsController.get_last_mission
     interval = mission.interval
     times = mission.times
+
     # for demo purpose, we use second and mintues to replace mmintues and day
     if interval >0
       counter.interval "#{interval}s",:times => times do

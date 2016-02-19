@@ -1,14 +1,35 @@
+<div class="text-center">
+	<a href="/users/<%=current_user.id%>" class = "btn btn-primary">Back</a>
+</div>
 <div class = 'container'>
 
+		<%if !@mission.status%>
 	<h4>Check Mission <%=@mission.title%></h4>
 	<form action="/missions/<%=@mission.id%>" method = "post">
 		<input type="hidden" name = "authenticity_token" value = "<%=form_authenticity_token%>">
 		<input type="hidden" name = "_method" value = "patch">
-		
-		<input type="submit" value = "Update" class = "btn btn-success">
+			<input type="submit" value = "Update" class = "btn btn-success">
 	</form>
+		<%end%>
 </div>
 
-<div class = 'view'>
-	<% image_tag "frame-1.gif" %>
+<div class="text-center">
+	<% if @mission.times == 10 %>
+		<% if @mission.check_count > 0 && !@mission.status%>
+			<%= image_tag "f#{@mission.id % 5+1}-#{@mission.check_count}.gif",:style => "width:400px;border-radius:50%"%>
+		<%end%>
+		<% if @mission.status %>
+			<h4>Congratulations! You have completed your task!</h4>	
+			<%= image_tag "f#{@mission.id % 5+1}.gif",:style => "width:400px;border-radius:50%"%>
+		<%end%>
+	<%end%>
+	<% if @mission.times == 5 %>
+		<% if @mission.check_count > 0 && !@mission.status%>
+			<%= image_tag "b#{@mission.id % 3+1}-#{@mission.check_count}.gif",:style => "width:400px;border-radius:50%"%>
+		<%end%>
+		<% if @mission.status %>
+			<h4>Congratulations! You have completed your task!</h4>	
+			<%= image_tag "b#{@mission.id % 3+1}.gif",:style => "width:400px;border-radius:50%"%>
+		<%end%>
+	<%end%>
 </div>

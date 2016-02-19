@@ -45,7 +45,8 @@ class MissionsController < ApplicationController
     end
   
     @mission.save
-    redirect_to "/users/#{current_user.id}"
+    # redirect_to "/users/#{current_user.id}"
+    redirect_to :back
 
   end
 
