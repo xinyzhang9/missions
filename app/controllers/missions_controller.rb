@@ -37,12 +37,20 @@ class MissionsController < ApplicationController
 
   def update
     @mission = Mission.find(params[:id])
-    @mission.title = params[:title]
-    @mission.interval = params[:title]
+    if @mission.check_count < @mission.times
+      @mission.check_count +=1
+      if @mission.check_count >= @mission.times
+        @mission.status = true
+      end
+    end
+  
+    @mission.save
+    redirect_to "/users/#{current_user.id}"
 
   end
 
   def edit
+    @mission = Mission.find(params[:id])
 
   end
 
