@@ -39,7 +39,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "twitter-bootstrap-rails"
-gem 'validates_timeliness', '~> 4.0'
 
 gem 'bcrypt', '~> 3.1.7'
 group :test, :development do
