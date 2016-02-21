@@ -30,10 +30,10 @@ class TwiliosController < ApplicationController
     end
   end
 
-  # def sef.receiveSMS
-  #   get '/twilios/receive' do
-  #     puts params[:From]
-  #     puts params[:Body]
-  #   end
-  # end
+  def sef.receiveSMS
+    get '/twilios/receive' do
+      puts params[:From]
+      puts params[:Body]
+    end
+  end
 end

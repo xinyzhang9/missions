@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@missions = current_user.missions
+  	@missions = current_user.missions.order(created_at: :desc)
   end  
   
   private
