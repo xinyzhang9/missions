@@ -2,7 +2,7 @@
 ![alt tag](https://raw.githubusercontent.com/xinyzhang9/missions/master/img1.png)  
 ![alt tag](https://raw.githubusercontent.com/xinyzhang9/missions/master/img2.png)  
 ![alt tag](https://raw.githubusercontent.com/xinyzhang9/missions/master/img3.png)  
-# What does this Web do:  
+# What does this Web app do:  
 Set up personal missions/plans, and we will send you notifications var SMS message.  
 If you finish your missions day by day, step by step, we will reward you some interesting pictures.  
 The goal of our web is to help users keep tracking their missions/plans, also keep motivated.  
@@ -21,9 +21,6 @@ Ruby on Rails, rufus-scheduler, twilio
 # Database creation  
   User table  
   Mission table  
-
-# How to run the test suite  
-  N/A  
 
 # Deployment instructions  
   using AWS micro  
