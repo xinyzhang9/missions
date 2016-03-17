@@ -1,6 +1,7 @@
 # missions  
 ![alt tag](https://raw.githubusercontent.com/xinyzhang9/missions/master/img1.png)  
 ![alt tag](https://raw.githubusercontent.com/xinyzhang9/missions/master/img2.png)  
+![alt tag](https://raw.githubusercontent.com/xinyzhang9/missions/master/img3.png)  
 #What does this Web do:  
 Set up personal missions/plans, and we will send you notifications var SMS message.  
 If you finish your missions day by day, step by step, we will reward you some interesting pictures.  
